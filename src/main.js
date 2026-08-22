@@ -24,6 +24,7 @@ import {
 } from "lucide";
 
 const whatsappNumber = "919840000000";
+const assetBase = import.meta.env.BASE_URL;
 const defaultMessage =
   "Hello PeopleDO Home Care, I would like to know more about your home care services in Chennai.";
 const whatsappUrl = (message) =>
@@ -31,9 +32,9 @@ const whatsappUrl = (message) =>
 
 document.querySelector("#app").innerHTML = `
 
-<header class="site-header"><a class="brand" href="#top" aria-label="PeopleDO Home Care home"><img src="/images/peoplesdo_logo.png" alt="PeopleDO Home Care logo"></a><nav class="nav-links" aria-label="Main navigation"><a href="#services">Services</a><a href="#why-us">Why choose us</a><a href="#caregivers">Caregivers</a><a href="#feedback">Feedback</a><a href="#contact">Contact</a></nav><a class="whatsapp-button header-whatsapp" href="${whatsappUrl(defaultMessage)}" target="_blank" rel="noreferrer"><i data-lucide="message-circle"></i> WhatsApp us</a><button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button></header>
+<header class="site-header"><a class="brand" href="#top" aria-label="PeopleDO Home Care home"><img src="${assetBase}images/peoplesdo_logo.png" alt="PeopleDO Home Care logo"></a><nav class="nav-links" aria-label="Main navigation"><a href="#services">Services</a><a href="#why-us">Why choose us</a><a href="#caregivers">Caregivers</a><a href="#feedback">Feedback</a><a href="#contact">Contact</a></nav><a class="whatsapp-button header-whatsapp" href="${whatsappUrl(defaultMessage)}" target="_blank" rel="noreferrer"><i data-lucide="message-circle"></i> WhatsApp us</a><button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button></header>
 <main id="top">
-<section class="hero-section hero-peopledo"><div class="hero-copy"><div class="logo-reveal"><span class="logo-glow"></span><img src="/images/peoplesdo_logo.png" alt="PeopleDO Home Care logo"></div><p class="eyebrow hero-label"><span><i data-lucide="sparkles"></i></span> PEOPLEDO HOME CARE</p><h1>Caring Hands.<br><em>Happy Homes.</em></h1><p class="hero-text">Safe, loving and reliable home care for your little ones and loved ones.</p><div class="hero-actions"><a class="whatsapp-button" href="${whatsappUrl(defaultMessage)}" target="_blank" rel="noreferrer"><i data-lucide="message-circle"></i> WhatsApp Us</a><a class="callback-link" href="#contact"><i data-lucide="phone"></i> Request a Callback</a></div><div class="trust-row"><span class="trust-icon"><i data-lucide="check"></i></span><span>Verified caregivers</span><span class="trust-icon"><i data-lucide="check"></i></span><span>Serving Saligramam &amp; Chennai</span></div></div><div class="hero-visual"><div class="sun-shape"></div><img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?auto=format&fit=crop&w=1000&q=80" alt="Parent holding a happy baby at home" fetchpriority="high"><div class="hero-badge"><span><i data-lucide="heart"></i></span><b>Care that feels<br>like family</b></div><div class="sparkle sparkle-one"><i data-lucide="sparkles"></i></div><div class="sparkle sparkle-two"><i data-lucide="sparkles"></i></div><div class="floating-heart"><i data-lucide="heart"></i></div></div></section>
+<section class="hero-section hero-peopledo"><div class="hero-copy"><div class="logo-reveal"><span class="logo-glow"></span><img src="${assetBase}images/peoplesdo_logo.png" alt="PeopleDO Home Care logo"></div><p class="eyebrow hero-label"><span><i data-lucide="sparkles"></i></span> PEOPLEDO HOME CARE</p><h1>Caring Hands.<br><em>Happy Homes.</em></h1><p class="hero-text">Safe, loving and reliable home care for your little ones and loved ones.</p><div class="hero-actions"><a class="whatsapp-button" href="${whatsappUrl(defaultMessage)}" target="_blank" rel="noreferrer"><i data-lucide="message-circle"></i> WhatsApp Us</a><a class="callback-link" href="#contact"><i data-lucide="phone"></i> Request a Callback</a></div><div class="trust-row"><span class="trust-icon"><i data-lucide="check"></i></span><span>Verified caregivers</span><span class="trust-icon"><i data-lucide="check"></i></span><span>Serving Saligramam &amp; Chennai</span></div></div><div class="hero-visual"><div class="sun-shape"></div><img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?auto=format&fit=crop&w=1000&q=80" alt="Parent holding a happy baby at home" fetchpriority="high"><div class="hero-badge"><span><i data-lucide="heart"></i></span><b>Care that feels<br>like family</b></div><div class="sparkle sparkle-one"><i data-lucide="sparkles"></i></div><div class="sparkle sparkle-two"><i data-lucide="sparkles"></i></div><div class="floating-heart"><i data-lucide="heart"></i></div></div></section>
 <section class="services-section" id="services"><div class="section-intro"><p class="eyebrow"><span><i data-lucide="sparkles"></i></span> Care made personal</p><h2>Trusted support for<br>Chennai families.</h2><p>From elder care to patient support and babysitting, our trained team brings dependable care to your doorstep.</p></div><div class="service-grid">${[
   [
     "user-round",
@@ -74,7 +75,7 @@ createIcons({ icons: { ArrowUpRight, Baby, Check, ClipboardList, Handshake, Hear
 
 const footerBrand = document.querySelector("footer .brand");
 if (footerBrand) {
-  footerBrand.innerHTML = '<img src="/images/peoplesdo_logo.png" alt="PeopleDO Home Care logo">';
+  footerBrand.innerHTML = `<img src="${assetBase}images/peoplesdo_logo.png" alt="PeopleDO Home Care logo">`;
 }
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
